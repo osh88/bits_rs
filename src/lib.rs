@@ -50,14 +50,14 @@ use std::convert::TryFrom;
 /// ```
 ///     let src = [5u16, 5]; // [0b_101, 0b_101]
 ///     let dst = [2u8, 3, 1]; // [0b_10, 0b_11, 0b_01]
-///     let r: Vec<u8> = bits::repack(&src, 3, 2, 6).unwrap();
+///     let r: Vec<u8> = bits_rs::repack(&src, 3, 2, 6).unwrap();
 ///     assert_eq!(dst, r.as_slice());
 /// ```
 ///
 /// ```
 ///     let src = [5u16, 5]; // [0b_101, 0b_101]
 ///     let dst = [11u8, 4]; // [0b_1011, 0b_0100]
-///     let r: Vec<u8> = bits::repack(&src, 3, 4, 8).unwrap();
+///     let r: Vec<u8> = bits_rs::repack(&src, 3, 4, 8).unwrap();
 ///     assert_eq!(dst, r.as_slice());
 /// ```
 pub fn repack<T1, T2>(src: &[T1], bits_in: usize, bits_out: usize, bits_limit: usize) -> Result<Vec<T2>, &'static str>
